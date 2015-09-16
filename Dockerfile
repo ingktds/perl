@@ -6,13 +6,13 @@ RUN yum -y install openssh-server \
                    make \
                    tar &&\
     # Perl Setup
-    curl -O http://www.cpan.org/src/5.0/perl-5.20.2.tar.gz &&\
-    tar xzf perl-5.20.2.tar.gz &&\
-    cd perl-5.20.2 &&\
+    curl -O http://www.cpan.org/src/5.0/perl-5.22.0.tar.gz &&\
+    tar xzf perl-5.22.0.tar.gz &&\
+    cd perl-5.22.0 &&\
     ./Configure -des -Dprefix=/usr/local/ &&\
     make &&\
     make install &&\
-    rm -rf perl-5.20.2* &&\
+    rm -rf perl-5.22.0* &&\
     # cpanm & Carton setup
     cd /usr/local/bin &&\
     curl -L http://cpanmin.us -o cpanm &&\
