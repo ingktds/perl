@@ -26,6 +26,7 @@ RUN yum -y install gcc \
     cpanm Carton &&\
 
     # mongoDB setup
+    mkdir -p /data/db &&\
     chkconfig mongod on
 
 EXPOSE 27017
