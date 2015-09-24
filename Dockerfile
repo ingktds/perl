@@ -6,7 +6,8 @@ ADD mongodb-org-3.0.repo /etc/yum.repos.d/mongodb-org-3.0.repo
 RUN yum -y install gcc \
                    make \
                    tar \
-                   mongodb-org &&\
+                   mongodb-org \
+                   vim &&\
 
     # Perl Setup
     cd $WORK_DIR &&\
@@ -23,7 +24,8 @@ RUN yum -y install gcc \
     cd /usr/local/bin &&\
     curl -L http://cpanmin.us -o cpanm &&\
     chmod +x cpanm &&\
-    cpanm Carton &&\
+    cpanm Carton \
+          MongoDB &&\
 
     # mongoDB setup
     mkdir -p /data/db &&\
